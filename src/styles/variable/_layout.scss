@@ -1,0 +1,57 @@
+.hidden {
+  display: none;
+  opacity: 0;
+}
+.v-hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+html {
+  font-size: 12px;
+  //RWD-sm
+  @include sm {
+    font-size: 10px;
+  }
+}
+
+body {
+  @include size(100%, 100vh);
+  background-image: url('../../../public/images/bgc5.jpg');
+  @extend %bg-cover;
+  transition: all 0.4s;
+  overflow: hidden;
+}
+
+.prev {
+  @include absolute-lt(0%, 0%);
+}
+
+.next {
+  @include absolute-rt(0%, 0%);
+}
+
+.arrow {
+  display: none;
+  //RWD-sm
+  @include sm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include size(3rem, 100%);
+    z-index: 90;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s;
+    @include blur(180%, 5px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

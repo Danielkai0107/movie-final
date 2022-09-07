@@ -1,0 +1,15 @@
+.btn {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  border-radius: 2rem;
+  z-index: 20;
+  transition: all 0.4s;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    background-color: rgba($color: #ccc, $alpha: 0.5);
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+}

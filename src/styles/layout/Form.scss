@@ -1,0 +1,94 @@
+.formContainer {
+  @include size(100%, 100vh);
+  @extend %flex-center;
+  flex-direction: column;
+  .form {
+    @include size(100%, 80vh);
+    //RWD-sm
+    @include sm {
+      @include size(40%, 80vh);
+    }
+    margin-top: 3rem;
+    padding: 0 5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    &__logo {
+      text-align: center;
+      color: #fff;
+      @include font(2.6rem, 3rem, 600, 0px);
+      span {
+        color: #fff;
+        @include font(2.6rem, 3rem, 100, 0px);
+      }
+    }
+    .inputGroup {
+      height: 50%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      .inputWrapper {
+        @extend %flex-center;
+        flex-direction: column;
+        &:focus-within {
+          label {
+            font-size: 1.2rem;
+          }
+        }
+        //RWD-sm
+        @include sm {
+          &:not(:first-of-type) {
+            margin-top: 1.5rem;
+          }
+        }
+
+        label {
+          width: 100%;
+          color: #fff;
+          @include font(1.5rem, 2.5rem, 200, 1px);
+          margin-bottom: 0.5rem;
+          transition: all 0.4s;
+        }
+        input {
+          @include size(100%, 3rem);
+          color: #fff;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          background-color: transparent;
+          @include font(1rem, 2rem, 100, 2px);
+        }
+      }
+    }
+
+    .submit {
+      width: 100%;
+      @extend %flex-center;
+      flex-direction: column;
+      margin-top: 1rem;
+      span {
+        @include size(100%, 3rem);
+        border-radius: 5px;
+        text-align: center;
+        background-color: rgba($color: #ccc, $alpha: 0.5);
+        @include font(1.2rem, 3rem, 300, 1px);
+        color: #fff;
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          background-color: transparent;
+          @include blur(400%, 5px);
+        }
+      }
+      .order {
+        color: #fff;
+        text-align: center;
+        margin-top: 2.3rem;
+        @include font(1.2rem, 1.5rem, 100, 1px);
+        a {
+          color: #fff;
+          @include font(1.2rem, 1.5rem, 400, 1px);
+        }
+      }
+    }
+  }
+}

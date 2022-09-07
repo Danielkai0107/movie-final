@@ -1,0 +1,39 @@
+.drawer {
+  @include size(100%, 100%);
+  //RWD-xs
+  @include xs {
+    width: 250px;
+  }
+  //RWD-md
+  @include sm {
+    width: 400px;
+  }
+  &__close {
+    width: 100%;
+    @include absolute-lb(0%, 0%);
+    @extend %flex-horizontal;
+    justify-content: flex-start;
+    padding: 1rem;
+    cursor: pointer;
+  }
+
+  li {
+    color: #fff;
+    padding: 2rem 1rem;
+    @extend %flex-horizontal;
+    @include font(1.8rem, 1.5rem, 300, 1px);
+    cursor: pointer;
+    &:not(:first-child):hover {
+      transition: all 0.4s;
+      background-color: rgba($color: #ccc, $alpha: 0.1);
+    }
+    &:last-child {
+      justify-content: space-between;
+    }
+    span {
+      color: #fff;
+      @include font(1.5rem, 1.5rem, 300, 1px);
+      margin-left: 1rem;
+    }
+  }
+}
