@@ -1,7 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const RegisterPage = () => {
+  const navigate = useNavigate();
+
+  const handleRegisterClick = () => {
+    navigate('/login');
+  };
+
   return (
     <main className="formContainer">
       <form className="form">
@@ -23,7 +29,7 @@ const RegisterPage = () => {
           </li>
         </ul>
         <section className="submit">
-          <span>SUBMIT</span>
+          <span onClick={handleRegisterClick}>SUBMIT</span>
           <p className="order">
             I already have an account ! <Link to="/login">Log in.</Link>
           </p>

@@ -1,7 +1,15 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { MovieContext } from '../func/context';
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+  const { setLogin } = useContext(MovieContext);
+
+  const handleLoginClick = () => {
+    setLogin(true);
+    navigate('/');
+  };
   return (
     <main className="formContainer">
       <form className="form">
@@ -19,7 +27,7 @@ const LoginPage = () => {
           </li>
         </ul>
         <section className="submit">
-          <span>LOGIN</span>
+          <span onClick={handleLoginClick}>LOGIN</span>
           <p className="order">
             I already have an account ! <Link to="/register">Sign up.</Link>
           </p>

@@ -62,7 +62,7 @@ const Navbar = () => {
             <IconButton
               aria-label="account page"
               component={RouterLink}
-              to="/account"
+              to="/login"
             >
               <Avatar
                 src="/static/images/avatar/1.jpg"
@@ -82,7 +82,7 @@ const Navbar = () => {
             <IconButton
               aria-label="account page"
               component={RouterLink}
-              to="/sign"
+              to="/login"
             >
               <Avatar
                 src="/static/images/avatar/1.jpg"

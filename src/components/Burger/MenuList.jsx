@@ -51,7 +51,7 @@ const MenuList = ({ setMenuOpen }) => {
       <li onClick={handleRouterBtn('/collect')}>
         collect {collect.length !== 0 && <span>({collect?.length})</span>}
       </li>
-      <li onClick={handleRouterBtn('/account')}>account</li>
+      <li onClick={handleRouterBtn('/login')}>account</li>
       {login ? (
         <li onClick={handleLogoutClick}>
           log out
